@@ -15,6 +15,5 @@ Please use the following two endpoints:
 - try to stick as close to the provided design as possible
 - responsivness and mobile-first development will be a bonus
 
-
 The design:
 ![GitHub Logo](https://github.com/mercury-holidays/exercise/blob/master/exercise.jpg)
