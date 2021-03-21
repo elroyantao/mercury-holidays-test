@@ -4,7 +4,7 @@ const fetchUsers = async () => {
   const normalizedUsers = users.reduce((userMap, user) => {
     return {
       ...userMap,
-      [user.id]: user
+      [user.id]: user,
     }
   }, {})
   return normalizedUsers

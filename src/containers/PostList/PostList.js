@@ -1,6 +1,8 @@
+import { Box, Grid } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import fetchPosts from '../../api/fetchPosts'
 import fetchUsers from '../../api/fetchUsers'
+import Post from '../../components/Post/Post'
 
 const PostList = () => {
   const [posts, setPosts] = useState([])
@@ -11,7 +13,7 @@ const PostList = () => {
       const [posts, users] = await Promise.all([fetchPosts(), fetchUsers()])
       setUsers(users)
       setPosts(posts)
-    } 
+    }
 
     fetchData()
   }, [])
@@ -21,23 +23,15 @@ const PostList = () => {
   }
 
   return (
-    <div>
-      {posts.map((post) => {
-        return (
-          <div key={post.id}>
-            <div>
-              {users[post.userId].name}
-            </div>
-            <div>
-              {post.title}
-            </div>
-            <div>
-              {post.body}
-            </div>
-          </div>
-        )
-      })}
-    </div>
+    <Box paddingY={4}>
+      <Grid container spacing={3}>
+        {posts.map((post) => (
+          <Grid key={post.id} item xs={12} md={6}>
+            <Post post={post} users={users} />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   )
 }
 
