@@ -1,4 +1,5 @@
-import { Box, Card, CardContent, CardHeader, Checkbox, Typography } from '@material-ui/core'
+import { Box, Card, CardContent, CardHeader, Checkbox } from '@material-ui/core'
+import { green, grey } from '@material-ui/core/colors'
 import React, { useState } from 'react'
 import ProfilePhoto from '../../uicomponnets/ProfilePhoto/ProfilePhoto'
 import Text from '../../uicomponnets/Text/Text'
@@ -25,7 +26,13 @@ const Post = ({ post = {}, users = {} }) => {
   )
 
   return (
-    <Card component={Box} height="100%" onClick={handleChecked} style={{ cursor: 'pointer' }} bgcolor={checked ? 'success.light' : 'white'}>
+    <Card
+      component={Box}
+      height="100%"
+      onClick={handleChecked}
+      style={{ cursor: 'pointer' }}
+      bgcolor={checked ? green[200] : 'white'}
+    >
       <CardHeader
         avatar={<ProfilePhoto name={name} />}
         title={name}
@@ -33,7 +40,7 @@ const Post = ({ post = {}, users = {} }) => {
         action={renderCardAction()}
         component={Box}
         borderBottom={1}
-        borderColor="grey.200"
+        borderColor={grey[300]}
       />
       <CardContent>
         <Text variant="h5" component="h2" noWrap style={{ paddingBottom: '8px' }}>

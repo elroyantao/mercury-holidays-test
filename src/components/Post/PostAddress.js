@@ -7,10 +7,18 @@ const PostAddress = ({ address }) => {
 
   return (
     <Box textAlign="right">
-      <Text component="p" variant="caption">{street}</Text>
-      <Text component="p" variant="caption">{suite}</Text>
-      <Text component="p" variant="caption">{city}</Text>
-      <Text component="p" variant="caption">{zipcode}</Text>
+      <Text component="p" variant="caption">
+        {street}
+      </Text>
+      <Text component="p" variant="caption">
+        {suite}
+      </Text>
+      <Text component="p" variant="caption">
+        {city}
+      </Text>
+      <Text component="p" variant="caption">
+        {zipcode}
+      </Text>
     </Box>
   )
 }
